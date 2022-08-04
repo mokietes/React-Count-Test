@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [hover, setHover] = useState(false);
 
   return (
     <div className="App">
@@ -13,6 +14,8 @@ function App() {
             type="button"
             className="btn btn-primary mx-2"
             onClick={() => setCount(count + 1)}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
           >
             Increment
           </button>
@@ -30,6 +33,7 @@ function App() {
           >
             reset
           </button>
+          {hover && <div>this will Increment</div>}
         </div>
       </header>
     </div>
